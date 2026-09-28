@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\SAA.Data\SAA.Data.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>SAA.FlightBooking</AssemblyName>
+    <Product>SAA Flight Booking System</Product>
+    <AssemblyTitle>SAA Flight Booking System (CTU PM02)</AssemblyTitle>
+    <Version>1.0.0</Version>
+    <Company>CTU Training Solutions</Company>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+</Project>
