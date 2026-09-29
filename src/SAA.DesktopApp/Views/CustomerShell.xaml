@@ -1,0 +1,29 @@
+<UserControl x:Class="SAA.DesktopApp.Views.CustomerShell"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="{StaticResource AppBackground}" FontFamily="Segoe UI">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="{StaticResource Navy}" Padding="24,14">
+            <Grid>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonUp="Brand_Click">
+                    <TextBlock>
+                        <Run Text="SAA" FontSize="22" FontFamily="Segoe UI Black" Foreground="#C8A24B"/>
+                        <Run Text="  Airways" FontSize="16" FontFamily="Segoe UI Light" Foreground="White"/>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <TextBlock Text="Book &#x2022; Manage &#x2022; Fly" Foreground="#9FB2C6" FontSize="12"
+                               VerticalAlignment="Center" Margin="0,0,16,0"/>
+                    <Button Content="Log out" Style="{StaticResource SecondaryButton}" Click="Logout_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <ContentControl x:Name="Host" Grid.Row="1"/>
+    </Grid>
+</UserControl>

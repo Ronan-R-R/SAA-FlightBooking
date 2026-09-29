@@ -6,7 +6,7 @@ namespace SAA.Data;
 /// ADO.NET data access for the SAA Flight Booking database.
 /// All queries are parameterised where they take input.
 /// </summary>
-public sealed class FlightBookingRepository
+public sealed partial class FlightBookingRepository
 {
     private readonly string _connectionString;
 
@@ -58,7 +58,8 @@ public sealed class FlightBookingRepository
         const string sql = @"
             SELECT f.FlightId, f.FlightNumber,
                    dep.City, dep.IataCode, arr.City, arr.IataCode,
-                   f.DepartureTime, f.ArrivalTime, f.Aircraft, f.SeatCapacity, f.BaseFare
+                   f.DepartureTime, f.ArrivalTime, f.Aircraft, f.SeatCapacity, f.BaseFare,
+                   f.DepartureAirportId, f.ArrivalAirportId
             FROM   dbo.Flights f
             JOIN   dbo.Airports dep ON dep.AirportId = f.DepartureAirportId
             JOIN   dbo.Airports arr ON arr.AirportId = f.ArrivalAirportId
@@ -83,7 +84,9 @@ public sealed class FlightBookingRepository
                 ArrivalTime = r.GetDateTime(7),
                 Aircraft = r.IsDBNull(8) ? null : r.GetString(8),
                 SeatCapacity = r.GetInt32(9),
-                BaseFare = r.GetDecimal(10)
+                BaseFare = r.GetDecimal(10),
+                DepartureAirportId = r.GetInt32(11),
+                ArrivalAirportId = r.GetInt32(12)
             });
         }
         return list;

@@ -16,6 +16,11 @@
     <Version>1.0.0</Version>
     <Company>CTU Training Solutions</Company>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <ApplicationIcon>Assets\appicon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\appicon.ico" />
+  </ItemGroup>
 
 </Project>
