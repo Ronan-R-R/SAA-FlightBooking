@@ -1,0 +1,41 @@
+<UserControl x:Class="SAA.DesktopApp.Views.CustomerConfirmationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FontFamily="Segoe UI">
+    <Grid Margin="48,40,48,40">
+        <Border Style="{StaticResource Card}" VerticalAlignment="Top" MaxWidth="640" HorizontalAlignment="Center" Padding="34">
+            <StackPanel>
+                <Border Width="60" Height="60" CornerRadius="30" Background="#3FB650" HorizontalAlignment="Center">
+                    <TextBlock Text="&#x2713;" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                <TextBlock Text="Booking confirmed" Style="{StaticResource H1}" HorizontalAlignment="Center" Margin="0,16,0,0"/>
+                <TextBlock x:Name="Subtitle" Style="{StaticResource Muted}" HorizontalAlignment="Center" Margin="0,4,0,0" TextAlignment="Center"/>
+
+                <Border Background="#EEF3F9" CornerRadius="8" Padding="20" Margin="0,22,0,0">
+                    <StackPanel>
+                        <TextBlock Text="Booking reference" Style="{StaticResource Muted}"/>
+                        <TextBlock x:Name="Reference" FontFamily="Segoe UI Semibold" FontSize="26" Foreground="{StaticResource Navy}"/>
+                        <Rectangle Height="1" Fill="{StaticResource Border}" Margin="0,14,0,14"/>
+                        <Grid>
+                            <StackPanel HorizontalAlignment="Left">
+                                <TextBlock Text="Route" Style="{StaticResource Muted}"/>
+                                <TextBlock x:Name="Route" FontFamily="Segoe UI Semibold" Foreground="{StaticResource TextDark}"/>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center">
+                                <TextBlock Text="Seats" Style="{StaticResource Muted}"/>
+                                <TextBlock x:Name="Seats" FontFamily="Segoe UI Semibold" Foreground="{StaticResource TextDark}"/>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Right">
+                                <TextBlock Text="Paid" Style="{StaticResource Muted}"/>
+                                <TextBlock x:Name="Amount" FontFamily="Segoe UI Semibold" Foreground="{StaticResource Gold}"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Button Content="Book another flight" HorizontalAlignment="Center" Margin="0,24,0,0"
+                        Padding="24,10" Click="Done_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

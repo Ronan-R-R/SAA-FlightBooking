@@ -1,0 +1,80 @@
+<UserControl x:Class="SAA.DesktopApp.Views.CustomerHomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FontFamily="Segoe UI">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <!-- Hero -->
+            <Grid Height="320">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#0A2540" Offset="0"/>
+                        <GradientStop Color="#1B6EC2" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <StackPanel VerticalAlignment="Center" Margin="48,0">
+                    <TextBlock Text="Fly South African Airways" FontSize="40" FontFamily="Segoe UI Light" Foreground="White"/>
+                    <TextBlock Text="Book your next flight in seconds." FontSize="17" Foreground="#C8DBEF" Margin="0,6,0,0"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Search card overlapping the hero -->
+            <Border Style="{StaticResource Card}" Margin="48,-56,48,0" Padding="26">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Find a flight"
+                               Style="{StaticResource H2}" Margin="0,0,0,14"/>
+
+                    <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,0,12,0">
+                        <TextBlock Text="From" Style="{StaticResource FieldLabel}" Margin="0,0,0,4"/>
+                        <ComboBox x:Name="FromCombo" Style="{StaticResource FieldCombo}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Margin="12,0,12,0">
+                        <TextBlock Text="To" Style="{StaticResource FieldLabel}" Margin="0,0,0,4"/>
+                        <ComboBox x:Name="ToCombo" Style="{StaticResource FieldCombo}"/>
+                    </StackPanel>
+                    <Button Grid.Row="1" Grid.Column="2" Content="Search flights" VerticalAlignment="Bottom"
+                            Padding="22,9" Click="Search_Click"/>
+
+                    <TextBlock x:Name="Message" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
+                               Style="{StaticResource Muted}" Foreground="#C0392B" Margin="0,10,0,0" Visibility="Collapsed"/>
+                </Grid>
+            </Border>
+
+            <!-- Value props -->
+            <UniformGrid Rows="1" Columns="3" Margin="48,26,48,40">
+                <Border Style="{StaticResource Card}" Margin="0,0,10,0">
+                    <StackPanel>
+                        <TextBlock Text="Voyager rewards" Style="{StaticResource H2}"/>
+                        <TextBlock Style="{StaticResource Muted}" TextWrapping="Wrap" Margin="0,6,0,0"
+                                   Text="Earn miles on every booking and redeem them for future flights."/>
+                    </StackPanel>
+                </Border>
+                <Border Style="{StaticResource Card}" Margin="10,0,10,0">
+                    <StackPanel>
+                        <TextBlock Text="Flexible fares" Style="{StaticResource H2}"/>
+                        <TextBlock Style="{StaticResource Muted}" TextWrapping="Wrap" Margin="0,6,0,0"
+                                   Text="Choose Economy, Business or First and pay by card, EFT or cash."/>
+                    </StackPanel>
+                </Border>
+                <Border Style="{StaticResource Card}" Margin="10,0,0,0">
+                    <StackPanel>
+                        <TextBlock Text="Domestic network" Style="{StaticResource H2}"/>
+                        <TextBlock Style="{StaticResource Muted}" TextWrapping="Wrap" Margin="0,6,0,0"
+                                   Text="Connecting Johannesburg, Cape Town, Durban and more across the country."/>
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

@@ -1,0 +1,10 @@
+<Window x:Class="SAA.DesktopApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SAA Flight Booking System" Height="760" Width="1180"
+        Icon="Assets/appicon.ico"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource AppBackground}"
+        FontFamily="Segoe UI">
+    <ContentControl x:Name="RootHost"/>
+</Window>

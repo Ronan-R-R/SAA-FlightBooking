@@ -18,3 +18,15 @@ installer/Output/
 # OS
 Thumbs.db
 .DS_Store
+
+# Assessment report and generated documents (kept out of the repo)
+*.docx
+*.pdf
+
+# Local tooling / assistant files (never commit)
+.claude/
+CLAUDE.md
+.cursor/
+.aider*
+*.ai
+copilot*
